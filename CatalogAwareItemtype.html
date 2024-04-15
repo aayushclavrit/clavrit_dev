@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<title>Clavrit</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="description" content="" />
+	<meta name="author" content="http://webthemez.com" />
+	<!-- css -->
+	<link href="css/bootstrap.min.css" rel="stylesheet" />
+	<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+	<link href="css/fancybox/jquery.fancybox.css" rel="stylesheet">
+	<!-- <link href="css/jcarousel.css" rel="stylesheet" /> -->
+	<link href="css/flexslider.css" rel="stylesheet" />
+	<link href="css/style.css" rel="stylesheet" />
+	<link href="css/blog.css" rel="stylesheet" />
+	<link href="css/footer.css" rel="stylesheet" />
+
+	<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+	<!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+	<div id="wrapper">
+		<!-- start header -->
+		<header>
+			<div class="navbar navbar-default navbar-static-top">
+				<div class="container">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle" data-toggle="collapse"
+							data-target=".navbar-collapse">
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						<a class="navbar-brand" href="index.html"><img src="img/logo.png" class="logoz"
+								alt="logo" /></a>
+					</div>
+					<div class="navbar-collapse collapse ">
+						<ul class="nav navbar-nav">
+							<li><a href="index.html">Home</a></li>
+							<li><a href="services.html">Services</a></li>
+							<!-- <li><a href="portfolio.html">Portfolio</a></li> -->
+							<!-- <li class="active"><a href="pricing.html">Resources</a></li> -->
+							<li class="dropdown">
+								<a style="background-color: transparent; color: white" class="dropdown-toggle"
+									data-toggle="dropdown" href="#">Resources <span class="caret"></span></a>
+								<ul class="dropdown-menu">
+									<li>
+										<a class="d2" href="blogs.html">Blogs</a>
+									</li>
+									<!-- <li><a class="d2" href="caseStudies.html">Case Studies</a></li> -->
+								</ul>
+							</li>
+							<li class="dropdown">
+								<a style="background-color: transparent; color: white" class="dropdown-toggle"
+									data-toggle="dropdown" href="#">Company <span class="caret"></span></a>
+								<ul class="dropdown-menu">
+									<li>
+										<a class="d2" href="about.html">About Us</a>
+									</li>
+									<li><a class="d2" href="career.html">Career</a></li>
+									<li><a class="d2" href="contact.html">Contact Us</a></li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</header><!-- end header -->
+		<section id="inner-headline" style="padding: 0%;">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12">
+						<h2 class="pageTitle">Blogs</h2>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<div style="background-color: white; width: 100%; padding: 0%;" class="container">
+			<div style="font-size: large;" class="col-md-9 col-md-offset-2 col-xs-20">
+				<div style="font-size: medium;" class="mainheading">
+
+					
+
+					<h1 class="posttitle">Catalog Aware Itemtype in SAP Commerce</h1>
+
+				</div>
+
+				<!-- Begin Featured Image -->
+				<img class="img-fluid blog-banner" src="/img/blog/Catalog Aware Itemtype/logo1.png" alt="">
+
+				<!-- End Featured Image -->
+				<br><br>
+				<!-- Begin Post Content -->
+				<div class="article-post">
+						<p style="margin-bottom: 0px;">The items that should take part in the synchronization process like Product, CMS Pages, and Components etc. are called <b>Catalog Aware.</b></p>
+						<p style="margin-bottom: 0px;">The items which do (or should) not take part in synchronization process are called <b>Catalog Unaware.</b></p>
+						<p style="margin-bottom: 0px;">Sometimes, it is required to define our <b>custom item types</b> as <b>Catalog aware item</b> types in order to make them eligible for <b>synchronization.</b></p>
+						<p style="margin-bottom: 0px;">It means we need to associate these custom item types with a <b>catalog</b> (content or product).</p>
+						<p style="margin-bottom: 0px;">We can achieve this either in <b>HMC/Backoffice</b> or by defining required attributes in items.xml file.</p>
+					
+					<h1>Steps for creating the Catalog Aware item:-</h1>
+						<p class="abc">Step1:Enable item type as catalog item type, using custom property catalogItemType.</p>
+						<p class="abc">Step2: Define the attribute catalogVersionAttributeQualifier with value same as qualifier of catalogversion attribute in the same item type.</p>
+						<p class="abc">Step3:Define the attribute uniqueKeyAttributeQualifier with value same as qualifier of unique attribute in the same item type and if there are multiple unique attributes then separate them by comma.</p>	
+						<h5>So with these steps, new item type definition in items.xml will be as below.</h5>
+						
+<pre>
+<xmp style="margin: 0px;">
+<typegroup name="Catalog Aware itemtype">
+	<itemtype code="CustomCatalogAware" autocreate="true" generate="true">
+	<deployment table=" CustomCatalogAware " typecode="12503"/>
+	<custom-properties>
+	<!-- Defining the type as synchronizing capable here: -->
+	<property name="catalogItemType">
+	<value>java.lang.Boolean.TRUE</value>
+	</property>
+	
+	<!-- defining catalog version attribute here: -->
+	<property name="catalogVersionAttributeQualifier">
+		<value>"catalogVersion"</value>
+	</property>
+	<!-- defining unique key attributes here; separate multiple attribute qualifiers by commas: -->
+	<property name="uniqueKeyAttributeQualifier">
+		<value>"code"</value>
+	</property>
+	</custom-properties>
+	<attributes>
+	<attribute qualifier="code" type="java.lang.String">
+		<modifiers read="true" write="true" search="true" optional="false" unique="true"/>
+		<persistence type="property"/>
+	</attribute>
+	<attribute qualifier="catalogVersion" type="CatalogVersion">
+		<modifiers read="true" write="true" search="true" optional="false"/>
+		<persistence type="property"/>
+	</attribute>
+	</attributes>
+	</itemtype>
+</typegroup>
+</xmp>
+</pre>
+									
+								
+						<p class="abc" style="margin-bottom: 5px;">After the above step do ant all (the corresponding model class will be generated) and start the server and do the system update (the corresponding table will be created in database).</p>
+						
+						<p class="abc" style="margin-bottom: 5px;">After that above item type is synchronizable which means source content of this item type will be copied to target automatically when we do synchronization.</p>
+						<p class="abc" style="margin-bottom: 5px;">Now, there are some entities which should have two copies in the system, so that Business users (like content managers or product managers) can make appropriate changes to make it look suitable on the website before it actually appears there. E.g. - Product, Images etc.</p>	
+						<p class="abc" style="margin-bottom: 5px;">But there are certain items which need not to have to copies of them, E.g. - Price, Stock etc. because they would be same for both copies of the item (Product in this case) and creating another copy would be an overhead on the system.</p>
+<pre>
+<xmp style="margin: 0px;">
+<itemtype code="Product" autocreate="false" generate="false">
+	<attributes>
+		<attribute type="localized:java.lang.String"
+					qualifier="customDescription"
+					autocreate="true">
+			<modifiers read="true"
+					write="true"
+					search="true"
+					optional="true"/>
+			<persistence type="property"/>
+		</attribute>
+	</attributes>
+</itemtype>		
+</xmp>
+</pre>
+
+<p class="abc">After the above step do ant all (the corresponding attribute will be generated in the ProductModel) and start the server and do the system update (the corresponding column will be created in Product table).</p>
+
+<h3>Go to Backoffice:-</h3>
+<h5 style="margin-bottom: 10px;">Types ->Type “Product” in text box and click on search:</h5>
+<img width="75%" class=" img-fluid" src="/img/blog/Catalog Aware Itemtype/CatalogAware1.png" alt="">
+<br>
+<h5 style="margin-bottom: 10px;">Click on the above highlighted symbol you will see the list of Products </h5>
+<img width="75%" class=" img-fluid" src="/img/blog/Catalog Aware Itemtype/CatalogAware2.png" alt="">
+<br>
+<h5 style="margin-bottom: 10px; width: 75%;">Search with the product id 358639 and select the staged version and in that go to the Administration tab you can see the customDescription attribute:</h5>
+<img width="75%" class=" img-fluid" src="/img/blog/Catalog Aware Itemtype/CatalogAware3.png" alt="">
+<br>
+<h5 style="margin-bottom: 10px; width: 75%;">You can observe that there is no value for the customDescription attribute and we need to provide some value and click on save button after that click on sync option symbol once the synchronization is done then that attribute value is automatically reflected in online version. Why because that customDescription attribute itself catalog aware.</h5>
+
+<img width="75%" class=" img-fluid" src="/img/blog/Catalog Aware Itemtype/CatalogAware4.png" alt="">
+<br>
+<h5 style="margin-bottom: 10px;">Now select the online version and see the value of customDescription attribute.</h5>
+<img width="75%" class=" img-fluid" src="/img/blog/Catalog Aware Itemtype/CatalogAware5.png" alt="">
+<br><br>
+</div>
+</div>
+</div>
+
+<footer style="padding-top: 20px;">
+	<div class="container">
+		<div class="row" style="margin: 0px;">
+			<div class="col-lg-4" id="contact">
+				<div class="widget">
+					<h5 class="widgetheading">Our Contact</h5>
+
+					<address style="margin-bottom: 0px;">
+					  <strong>Clavrit Digital Solutions</strong><br />
+					  18, Institutional Area,Prem Puri, Sector 32,<br>
+					  Gurugram, Haryana,122001-India
+					</address>
+	 
+					<p>
+					  <i class="icon-phone"></i>
+					  +91-9810167782<br />
+					  <i class="icon-phone"></i> 0124- 7177829 <br />
+					  <i class="icon-envelope-alt"></i>
+					  info@clavrit.com
+					</p>
+				</div>
+			</div>
+
+			<div class="col-lg-2" id="quickLinks">
+				<div class="widget">
+					<h5 class="widgetheading">Quick Links</h5>
+
+					<ul class="link-list">
+					  <li>
+						<a href="services.html">Services</a>
+					  </li>
+					  <l >
+						<a href="about.html">About Us</a>
+					  </li>
+					  <li>
+						<a href="blogs.html">Blogs</a>
+					  </li>
+					  <li>
+						<a href="career.html">Career</a>
+					  </li>
+					  <li>
+						<a href="contact.html">Contact us</a>
+					  </li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="col-lg-4" id="contact">
+				<div class="widget">
+					<h5 class="widgetheading">Latest posts</h5>
+
+					<ul class="link-list">
+					  <li>
+						<a href="reactivejava.html"
+						  >Reactive Programming Through Java</a
+						>
+					  </li>
+	 
+					  <li>
+						<a href="SAPclassification.html"
+						  >Classification Systems In SAP Commerce</a
+						>
+					  </li>
+
+					  <li>
+						<a href="SRGAN.html"
+						  >Revolutionizing Image Enhancement: A Deep Dive into SRGAN</a
+						>
+					  </li>
+
+					  <li>
+						<a href="ExploratoryTesting.html"
+						  >Exploratory Testing: Unleashing Creativity in Quality Assurance</a
+						>
+					  </li>
+					</ul>
+				</div>
+			</div>
+			
+			<div class="col-lg-2"  id="quickLinks">
+			  <div class="widget">
+				  <h5 class="widgetheading">Quick Links</h5>
+
+				  <ul class="social-network" style="padding-left: 0px;">
+					<li>
+					  <a
+						class="fa fa-facebook"
+						data-placement="top"
+						href="https://www.facebook.com/share/iBmat7SDtXvuHWrB/?mibextid=hu50Ix"
+						style="font-style: italic"
+						title="Facebook"
+					  ></a>
+					</li>
+   
+					<li>
+					  <a
+						class="fa fa-linkedin"
+						data-placement="top"
+						href="https://www.linkedin.com/company/clavrit/"
+						style="font-style: italic"
+						title="Linkedin"
+					  ></a>
+					</li>
+   
+					<li>
+					  <a
+						class="fa fa-instagram"
+						data-placement="top"
+						href="https://www.instagram.com/clav.ritdigitalsolutions?igsh=MWpnNDR2NTd2OGVybg=="
+						style="font-style: italic"
+						title="Instagram"
+					  ></a>
+					</li>
+				  </ul>
+			  </div>
+		  </div>
+		  <div class="col-lg-4"></div>
+			
+		</div>
+	</div>
+
+	<div id="sub-footer" style="margin-top: 0px;padding-top: 0px;">
+		<div class="container">
+			<div class="row" style="margin-bottom: 0;">
+				<div class="col-lg-12">
+				  <div class="copyright" style="text-align: center;">
+					<p>
+					  <span>&copy; 2019. Clavrit Digital Solutions. All Rights Reserved..</span>
+					</p>
+				  </div>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer> 
+
+</div>
+<a href="#" class="scrollup"><i class="fa fa-angle-up active"></i></a>
+<!-- javascript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="js/jquery.js"></script>
+<script src="js/jquery.easing.1.3.js"></script>
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+AOS.init();
+</script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.fancybox.pack.js"></script>
+<script src="js/jquery.fancybox-media.js"></script>
+<script src="js/portfolio/jquery.quicksand.js"></script>
+<script src="js/portfolio/setting.js"></script>
+<script src="js/jquery.flexslider.js"></script>
+<script src="js/animate.js"></script>
+<script src="js/custom.js"></script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+.servicesText {
+  width: 100%;
+  font-size: 16px;
+  font-weight: 500;
+  font-family: Arial, Helvetica, sans-serif;
+  color: black;
+  line-height: 1.8;
+  text-align: justify;
+}
+
+#servicesRow {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+#commerceBold {
+  font-weight: 800;
+  color: black;
+}
+#osText {
+  width: 83%;
+  font-size: 18px;
+  font-weight: 500;
+  font-family: Arial, Helvetica, sans-serif;
+  color: black;
+}
+#osHead {
+  padding: 24px;
+  line-height: 1.6;
+  padding-top: 0;
+}
+
+#offerText1 {
+  font-size: 16px;
+  font-weight: 700;
+  font-family: Arial, Helvetica, sans-serif;
+  color: black;
+  line-height: 1.8;
+}
+#carouselImgs {
+  padding-top: 30px;
+  margin-top: 90px;
+}
+
+@media (max-width: 520px) {
+  #content {
+    padding-top: 10px;
+  }
+  #pageTitle {
+    text-align: left !important;
+  }
+
+  #servContainer {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .servicesText {
+    text-align: center;
+    margin-bottom: 25px !important;
+  }
+
+  h2 {
+    margin-left: 0px;
+    text-align: center;
+  }
+
+  h3 {
+    margin-left: 0px;
+    text-align: center;
+  }
+
+  #carouselImgs {
+    padding: 30px;
+    margin: 0;
+  }
+
+  #servicesRow {
+    margin-bottom: 0px;
+  }
+}

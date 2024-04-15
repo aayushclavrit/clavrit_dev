@@ -1,0 +1,38 @@
+.filter {
+  margin-left: 30%;
+}
+.tag-text {
+  margin-left: 5%;
+}
+.blog-img {
+  width: 250px;
+  height: 100px;
+}
+.blog-img1 {
+  width: 280px;
+  height: 100px;
+}
+
+@media (max-width: 768px) {
+  .filter {
+    margin-left: 15%;
+  }
+  .tag-text {
+    margin-left: 12%;
+  }
+  .blog-img {
+    width: 70%;
+    height: 100px;
+  }
+  .blog-img1 {
+    width: 100%;
+    height: 100px;
+  }
+  .col-lg-9 {
+    margin-top: 10px;
+  }
+
+  .sapimg {
+    height: 160px !important;
+  }
+}

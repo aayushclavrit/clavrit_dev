@@ -1,0 +1,509 @@
+.HomeContainer1 {
+  background-color: gainsboro;
+}
+
+.whyClavrit {
+  text-align: center;
+  color: #fff;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+.hero-text2 {
+  background-color: gray;
+  padding: 10px;
+}
+.hero-text3 {
+  background-color: rgba(25, 109, 173, 0.6);
+  padding-left: 120px;
+  padding-right: 60px;
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+#cardImg1 {
+  justify-content: center;
+  padding-left: 50px;
+  color: white;
+  background-color: gainsboro;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+#cardImg2 {
+  justify-content: center;
+  padding-left: 41px;
+  color: white;
+  background-color: gainsboro;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+#cardImg3 {
+  justify-content: center;
+  padding-left: 38px;
+  color: white;
+  background-color: gainsboro;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.card {
+  background-color: rgba(25, 109, 173, 0.6);
+  /* background: linear-gradient(180deg, #003da6, #162851); */
+  width: 41rem;
+}
+
+.card-img-top {
+}
+
+.card-title {
+  display: flex;
+  justify-content: center;
+  color: white;
+}
+
+.card-text {
+  font-size: 15px;
+  font-weight: 500;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.7;
+  text-align: justify;
+}
+
+.HomeContainer2 {
+  background-color: rgba(25, 109, 173, 0.6);
+  /* linear-gradient:(0deg, #196DAD 60%, #14AD1A 60% ) */
+  padding-left: 120px;
+  padding-right: 60px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+#Homeblocks2 {
+  padding: 15px;
+}
+
+#businessRow {
+  display: flex;
+  margin: 0;
+}
+.Heading1 {
+  font-size: 45px;
+  /* line-height: 50px; */
+  color: aliceblue;
+  font-family: "Open Sans", Arial, sans-serif;
+  font-weight: 700;
+  line-height: 1.1em;
+}
+
+.Heading2 {
+  font-size: 38px;
+  color: white;
+}
+
+.paragraph1 {
+  font-size: 18px;
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.7;
+}
+
+.paragraph2 {
+  font-size: 16px;
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.7;
+}
+
+.HomeContainer3 {
+  background-color: rgba(25, 109, 173, 0.6);
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-top: 30px;
+}
+
+#clientsRow {
+  display: flex;
+  margin: 0;
+}
+.Heading21 {
+  color: white;
+}
+
+.Heading22 {
+  color: white;
+}
+
+.Heading23 {
+  color: white;
+  font-size: 23px;
+  font-weight: 500;
+  width: 400px;
+  line-height: 3rem;
+  font-family: Arial;
+}
+
+.hvideo {
+  width: 100%;
+  height: 540px;
+  z-index: -1;
+  opacity: 0.9;
+}
+
+#blocks {
+  display: flex;
+  margin: 0px;
+}
+
+#text1 {
+  padding-bottom: 0px;
+  color: rgba(25, 109, 173);
+  font-size: 19px;
+  font-weight: 600;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.7;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.techBlock {
+  background-color: rgba(25, 109, 173, 0.6);
+  margin-top: 30px;
+}
+
+#techImg {
+  margin-left: 80px;
+  margin-right: 80px;
+  margin-top: 80px;
+  margin-bottom: 100px;
+  width: 1300px;
+}
+#allyNos {
+  display: flex;
+  justify-content: center;
+  padding: 20px 50px;
+}
+.numTextHeading1 {
+  font-size: 40px;
+  color: #fff;
+}
+.numTextHeading2 {
+  font-size: 25px;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+}
+#allyNos1 {
+  width: 100%;
+  padding: 20px 100px;
+}
+#allyRow {
+  display: flex;
+  padding: 25px;
+  box-shadow: 0px 2px 10px 10px white;
+  border-radius: 20px;
+}
+
+#allyCol {
+  display: flex;
+  width: 20%;
+  padding-top: 10px;
+  padding-left: 15px;
+}
+#allyTextNo0 {
+  font-size: 50px;
+  padding-left: 30px;
+  margin-left: 25px;
+  color: #fff;
+}
+#allyTextNo {
+  font-size: 50px;
+  margin-left: 25px;
+  color: #fff;
+}
+#teamTextNo {
+  font-size: 50px;
+  margin-left: 46px;
+  color: #fff;
+}
+#countryTextNo {
+  font-size: 50px;
+  margin-left: 46px;
+  color: #fff;
+}
+.expText {
+  font-size: 24px;
+  padding-left: 10px;
+  padding-top: 20px;
+  font-family: Arial;
+  font-weight: 600;
+  color: #fff;
+  text-align: center;
+  line-height: 2.5rem;
+}
+.projText {
+  font-size: 24px;
+  padding-left: 17px;
+  padding-top: 20px;
+  font-family: Arial;
+  font-weight: 600;
+  color: #fff;
+  text-align: center;
+  line-height: 2.5rem;
+}
+.memText {
+  font-size: 24px;
+  padding-left: 41px;
+  padding-top: 20px;
+  font-family: Arial;
+  font-weight: 600;
+  color: #fff;
+  text-align: center;
+  line-height: 2.5rem;
+}
+.clText {
+  font-size: 24px;
+  padding-left: 17px;
+  padding-top: 20px;
+  font-family: Arial;
+  font-weight: 600;
+  color: #fff;
+  text-align: center;
+  line-height: 2.5rem;
+}
+
+.counText {
+  font-size: 24px;
+  padding-left: 17px;
+  padding-top: 20px;
+  font-family: Arial;
+  font-weight: 600;
+  color: #fff;
+  text-align: center;
+  line-height: 2.5rem;
+}
+
+.allyText {
+  font-size: 24px;
+  padding-left: 17px;
+  padding-top: 20px;
+  font-family: Arial;
+  font-weight: 600;
+  color: #fff;
+}
+.contentAlly {
+  padding: 15px;
+  padding-top: 53px;
+  padding-left: 0px;
+}
+
+.allyImg {
+  padding-top: 30px;
+  width: 80px;
+  height: 80px;
+}
+
+.clients {
+  background-color: rgba(25, 109, 173, 0.6);
+  margin-top: 30px;
+}
+#techblock {
+  display: flex;
+  margin: 0%;
+}
+#block1 {
+  margin-top: 30px;
+  margin-bottom: 60px;
+  padding-right: 10px;
+}
+#block2 {
+  width: 100%;
+  margin-top: 30px;
+  margin-bottom: 60px;
+  padding-left: 10px;
+}
+#techblock1 {
+  display: flex;
+  background-color: white;
+  margin: 0px;
+}
+#toolsblock {
+  display: flex;
+  margin: 0;
+  background-color: white;
+}
+
+.logoz {
+  width: 200px;
+  height: 50px;
+}
+
+#contact {
+  padding-right: 0px;
+}
+
+#quickLinks {
+  padding-left: 0px;
+}
+
+.d1 {
+  background-color: black !important;
+  color: white !important;
+}
+body {
+  background-color: gainsboro !important;
+}
+@media (max-width: 768px) {
+  #businessRow {
+    display: block;
+  }
+
+  .Heading2 {
+    line-height: 1.1em;
+    font-size: 25px;
+    text-align: center;
+  }
+  .Heading1 {
+    font-size: 30px;
+    text-align: center;
+  }
+  .Heading23 {
+    width: 100% !important;
+    font-size: 16px;
+  }
+  #clientsRow {
+    display: block;
+  }
+  #block1 {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+  #block2 {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+  #techblock {
+    display: block;
+    margin: 0%;
+  }
+  #techblock1 {
+    display: block;
+    background-color: white;
+    margin: 0px;
+  }
+  #toolsblock {
+    display: block;
+  }
+  .Heading23 {
+    width: 380px;
+    text-align: center;
+  }
+  #contact {
+    padding-right: 15px;
+  }
+
+  #quickLinks {
+    padding-left: 15px;
+  }
+  #allyRow {
+    display: block;
+    padding: 25px;
+    box-shadow: 0px 2px 10px 10px white;
+    border-radius: 20px;
+  }
+
+  #allyCol {
+    display: block;
+    width: 20%;
+    padding-top: 10px;
+    padding-left: 15px;
+  }
+  #allyNos1 {
+    width: 100%;
+    padding: 70px;
+    padding-top: 0px;
+    padding-bottom: 30px;
+  }
+
+  #allyTextNo0 {
+    margin-left: 0px;
+    padding-left: 20px;
+  }
+  #allyTextNo {
+    margin-left: 0px;
+  }
+  .projText {
+    padding-left: 0%;
+  }
+  #allyCol {
+    margin-left: 70px;
+  }
+  .allyImg {
+    margin-right: 0px;
+  }
+  #teamTextNo {
+    margin-left: 10px;
+  }
+  .memText {
+    padding-left: 0;
+  }
+  .clText {
+    padding-left: 0%;
+  }
+  #countryTextNo {
+    margin-left: 13px;
+  }
+  .counText {
+    padding-left: 0%;
+  }
+  #custCenter {
+    margin-left: 55px;
+    margin-top: 30px !important;
+  }
+
+  .navbar-header {
+    margin-top: 5px;
+  }
+  .HomeContainer2 {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .paragraph1 {
+    text-align: center;
+  }
+  #text1 {
+    text-align: center;
+  }
+
+  .card-text {
+    text-align: center;
+  }
+
+  .logoz {
+    width: 100px;
+    height: 25px;
+  }
+  .numTextHeading1 {
+    text-align: center;
+  }
+
+  #sub-footer {
+    margin-top: 0px !important;
+  }
+  #footerCon {
+    padding-left: 0px !important;
+  }
+
+  #quickLinks {
+    margin-bottom: 20px !important;
+  }
+  .widgetheading {
+    margin-bottom: 10px !important;
+  }
+}

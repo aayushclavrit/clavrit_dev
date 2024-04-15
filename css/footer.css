@@ -1,0 +1,29 @@
+#contact {
+  padding-right: 0px !important;
+}
+
+#quickLinks {
+  padding-left: 0px !important;
+}
+
+#sub-footer {
+  margin-top: 25px !important;
+}
+
+@media (max-width: 768px) {
+  #contact {
+    padding-right: 15px !important;
+  }
+
+  .widgetheading {
+    margin-bottom: 10px !important;
+  }
+  #quickLinks {
+    padding-left: 15px !important;
+    margin-bottom: 20px !important;
+  }
+
+  #sub-footer {
+    margin-top: 0px !important;
+  }
+}

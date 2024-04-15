@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Clavrit</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- css -->
+  <link href="css/bootstrap.min.css" rel="stylesheet" />
+  <link href="css/style.css" rel="stylesheet" />
+  <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+  <link href="css/job-apply.css" rel="stylesheet" />
+  <link href="css/footer.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+  <!-- Include EmailJS library -->
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <!-- Include the intl-tel-input and utils.js scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js"></script>
+
+  <script>
+    (function () {
+      emailjs.init('2Xq1gYg-KyPyM6lxQ');
+    })();
+
+    function generateAndSendEmail() {
+      // Fetch data from the form
+      var name = document.getElementById('FullName').value;
+      var email = document.getElementById('email').value;
+      var designation = document.getElementById('Designation').value;
+      var company = document.getElementById('Company').value;
+      var phone = document.getElementById('phone1').value;
+      var country = document.getElementById('country').value;
+      var subject = document.getElementById('subject').value;
+      var message = document.getElementById('msg').value;
+
+      // Construct the message
+      var fullMessage = `
+            Name: ${name}
+            Email: ${email}
+            Designation: ${designation}
+            Company: ${company}
+            Phone: ${phone}
+            Country: ${country}
+            Subject: ${subject}
+            Message: ${message}
+          `;
+
+      // Send email using EmailJS
+      emailjs.send("service_fee58wq", "template_a0o0krc", {
+        from_name: name,
+        reply_to: email,
+        message_html: fullMessage
+      })
+        .then(function (response) {
+          console.log('Email sent:', response.status, response.text);
+          alert('Email sent successfully!');
+          // Optionally, clear the form
+          document.getElementById('contact-form').reset();
+        }, function (error) {
+          console.error('Email send failed:', error);
+          alert('Email send failed. Please try again later.');
+        });
+
+      // Prevent the form from submitting
+      return false;
+    }
+  </script>
+
+</head>
+
+<body>
+
+  <div id="wrapper">
+    <!-- start header -->
+    <header>
+      <div class="navbar navbar-default navbar-static-top">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="index.html"><img src="img/logo.png" class="logoz" alt="logo" /></a>
+          </div>
+          <div class="navbar-collapse collapse ">
+            <ul class="nav navbar-nav">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="services.html">Services</a></li>
+              <!-- <li><a href="portfolio.html">Portfolio</a></li> -->
+              <!-- <li class="active"><a href="pricing.html">Resources</a></li> -->
+              <li class="dropdown">
+                <a style="background-color: transparent; color: white" class="dropdown-toggle" data-toggle="dropdown"
+                  href="#">Resources <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="d2" href="blogs.html">Blogs</a>
+                  </li>
+                  <li><a class="d2" href="caseStudies.html">Case Studies</a></li>
+                </ul>
+              </li>
+              <li class="dropdown">
+                <a style="background-color: transparent; color: white" class="dropdown-toggle" data-toggle="dropdown"
+                  href="#">Company <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="d2" href="about.html">About Us</a>
+                  </li>
+                  <li><a class="d2" href="career.html">Career</a></li>
+                  <li><a class="d2" href="contact.html">Contact Us</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </header><!-- end header -->
+
+    <section style="background-color: white;" id="inner-headline">
+
+
+      <div class="container" style="color: #000; ">
+        <div class="row" style="margin-left: 20px; margin-right: 20px;">
+          <div class="col-sm-8">
+            <div class="card">
+              <div class="card-body" style="margin-top: 60px;">
+                <div class="jobs-row clearfix position_title type-text position_title ">
+                  <div style=" font-weight: bold;
+                  color:black;" class="jobs-row-label"><span
+                      style=" border-bottom: 2px solid rgb(197, 196, 196); font-size: medium;">Position title</span>
+                  </div>
+                  <div class="jobs-row-input" style="font-weight: bold;">
+                    <h3>Senior Tester</h3>
+                  </div>
+                </div>
+                <div class="jobs-row clearfix position_description type-tinymce  ">
+                  <div style=" font-weight: bold;margin-top: 15px;
+                  color:black;" class="jobs-row-label"><span
+                      style=" border-bottom: 2px solid rgb(197, 196, 196); font-size: medium;">Description</span></div>
+                  <div style="margin-top: 5px;" class="jobs-row-input">
+                    <p style="text-align: left !important;">Our growing company is looking to fill the role of Senior
+                      Test Engineer. To join our growing team, please review the list of responsibilities and
+                      qualifications. </p>
+                    <p>We look forward to reviewing your resume.</p>
+                  </div>
+                </div>
+
+                <div style=" font-weight: bold;margin-top: 15px;
+                color:black;" class="jobs-row-label"><span
+                    style=" border-bottom: 2px solid rgb(197, 196, 196); font-size: medium;">Skills Required</span>
+                </div>
+                <div style="padding: 3px; margin-top: 10px;" class="jobs-row-input">
+                  <ul>
+                    <li>5 years of QA experience, with a minimum of 2 years dedicated to writing software test scripts
+                      for UI automation.</li>
+                    <li>Experience with Appium, Selenium, XCTest.</li>
+                    <li>Proficiency in web application testing, including web services, Java, and APIs.</li>
+                    <li>Strong working knowledge of scale-out data storage techniques (NAS and Object), Networking, data
+                      encryption, and Linux server hardware.</li>
+                    <li>Familiarity with storage industry client tools (s3cmd, CosBench, jmeter, Load DynamiX) for
+                      performing S3, OpenStack, and NAS operations.</li>
+                    <li>Creation and execution of both automated and manual test suites.</li>
+                    <li>3+ years of scripting experience in programming languages.</li>
+                    <li>Experience in testing browser and server-side performance, including proficiency with profiling
+                      tools such as browser development tools, Dynatrace, and SiteScope.</li>
+                  </ul>
+
+                </div>
+
+                <div class="jobs-row clearfix position_responsibilities type-tinymce  ">
+                  <div style=" font-weight: bold;margin-top: 15px;
+                color:black;" class="jobs-row-label"><span
+                      style=" border-bottom: 2px solid rgb(197, 196, 196); font-size: medium;">Responsibilities</span>
+                  </div>
+
+                  <div style="padding: 3px; margin-top: 10px;" class="jobs-row-input">
+                    <ul>
+                      <li>Design and develop automated tests at all levels, encompassing unit, functional, integration,
+                        and end-to-end tests.</li>
+                      <li>Create comprehensive documentation for tested features.</li>
+                      <li>Report issues in the defect tracking system and monitor progress towards milestones.</li>
+                      <li>Conduct regular smoke tests on the system.</li>
+                      <li>Deploy tests to the staging server.</li>
+                      <li>Investigate and reproduce defects reported by customers.</li>
+                      <li>Take charge of project/release estimating and sprint analysis, allocating and monitoring tasks
+                        in sprints.</li>
+                      <li>Serve as the initial point of contact for testing-related issues.</li>
+                      <li>Review user requirements, prepare test cases, execute tests, and report defects and
+                        completion.</li>
+                      <li>Write effective and thorough bug reports and verify bug fixes.</li>
+                      <li>May perform manual testing as needed to support development teams.</li>
+                      <li>Collaborate closely with the team to implement a Selenium-based QA framework from the ground
+                        up.</li>
+                      <li>Support development teams by writing unit and integration tests.</li>
+                    </ul>
+
+                  </div>
+                </div>
+                <div style=" font-weight: bold;margin-top: 15px;
+              color:black;" class="jobs-row-label"><span
+                    style=" border-bottom: 2px solid rgb(197, 196, 196); font-size: medium;">Soft Skills</span></div>
+                <div style="padding: 3px; margin-top: 10px;" class="jobs-row-input">
+                  <ul>
+                    <li>Ability to work in a team.</li>
+                    <li>Self-starter and highly motivated.</li>
+                    <li>Excellent communication skills.</li>
+                    <li>Ability to handle high-pressure and fast-paced situations.</li>
+                    <li>Ability to work with globally distributed teams.</li>
+                  </ul>
+
+                </div>
+                <div class="jobs-row clearfix position_qualifications type-tinymce  ">
+
+                  <div style=" font-weight: bold;margin-top: 15px;
+              color:black;" class="jobs-row-label"><span
+                      style=" border-bottom: 2px solid rgb(197, 196, 196); font-size: medium;">Educational
+                      Qualifications</span></div>
+
+                  <div class="jobs-row-input">
+                    <p style="text-align: left !important; margin-top: 10px;">Bachelor's and Master's Degree in Computer
+                      Science, Engineering, Science & Technology, Information Technology. </p>
+                  </div>
+                </div>
+
+                <div class="jobs-row clearfix position_qualifications type-tinymce  ">
+
+                  <div style=" font-weight: bold;margin-top: 15px;
+              color:black;" class="jobs-row-label"><span
+                      style=" border-bottom: 2px solid rgb(197, 196, 196); font-size: medium;">Contacts</span></div>
+
+                  <div class="jobs-row-input">
+                    <p style="text-align: left !important; margin-top: 10px;">For any queries drop an email at:</p>
+                    <p style="color: blue">hr@clavrit.com </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-4" style=" margin-top: 110px; display: flex; justify-content: center; ">
+            <div class="right-top">
+              <div class="card-body" style="margin-top: 10px; padding: 15px;">
+
+                <div style="margin-left: 12px; color: black;">
+                  <div style=" font-weight: bold;margin-top: 15px;
+                  color:black;" class="jobs-row-label"><span
+                      style=" border-bottom: 2px solid rgb(197, 196, 196); font-size: medium;">Joining Period
+                      Required:</span></div>
+                  <div style="margin-top: 10px;">Immediate to 15-20 days.</div>
+
+                  <div style=" font-weight: bold;margin-top: 15px;
+                        color:black;" class="jobs-row-label"><span
+                      style=" border-bottom: 2px solid rgb(197, 196, 196); font-size: medium;">Industry</span></div>
+                  <div style="margin-top: 10px;">Information and Technology</div>
+
+                  <div style=" font-weight: bold;margin-top: 20px;
+                      color:black;" class="jobs-row-label"><span
+                      style=" border-bottom: 2px solid rgb(197, 196, 196); font-size: medium;">Job Location</span>
+                  </div>
+                  <div style="margin-top: 10px;" class="jobs-row-input">
+                    <i class="fa fa-map-marker" style=" color: black; margin-right: 2px;font-size: 20px;"></i>
+                    Gurugram, Haryana,122001-India
+                  </div>
+                  <div style=" font-weight: bold;margin-top: 15px;
+                        color:black;" class="jobs-row-label"><span
+                      style=" border-bottom: 2px solid rgb(197, 196, 196); font-size: medium;">Other Job
+                      location:</span></div>
+                  <div style="margin-top: 10px;">WFH</div>
+                  <div style="margin-top: 40px;" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="form-row last text-center">
+                      <a href="career.html"
+                        style="border-radius: 20px; color: white; background-color: #1083b0; font-weight: bold; font-size: medium;"
+                        class="wpcf7-form-control has-spinner wpcf7-submit custom-btn-submit">APPLY NOW<span
+                          class="wpcf7-spinner"></span></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer style="padding-top: 20px;">
+      <div class="container">
+          <div class="row" style="margin: 0px;">
+              <div class="col-lg-4" id="contact">
+                  <div class="widget">
+                      <h5 class="widgetheading">Our Contact</h5>
+
+                      <address style="margin-bottom: 0px;">
+                        <strong>Clavrit Digital Solutions</strong><br />
+                        18, Institutional Area,Prem Puri, Sector 32,<br>
+                        Gurugram, Haryana,122001-India
+                      </address>
+       
+                      <p>
+                        <i class="icon-phone"></i>
+                        +91-9810167782<br />
+                        <i class="icon-phone"></i> 0124- 7177829 <br />
+                        <i class="icon-envelope-alt"></i>
+                        info@clavrit.com
+                      </p>
+                  </div>
+              </div>
+
+              <div class="col-lg-2" id="quickLinks">
+                  <div class="widget">
+                      <h5 class="widgetheading">Quick Links</h5>
+
+                      <ul class="link-list">
+                        <li>
+                          <a href="services.html">Services</a>
+                        </li>
+                        <l >
+                          <a href="about.html">About Us</a>
+                        </li>
+                        <li>
+                          <a href="blogs.html">Blogs</a>
+                        </li>
+                        <li>
+                          <a href="career.html">Career</a>
+                        </li>
+                        <li>
+                          <a href="contact.html">Contact us</a>
+                        </li>
+                      </ul>
+                  </div>
+              </div>
+
+              <div class="col-lg-4" id="contact">
+                  <div class="widget">
+                      <h5 class="widgetheading">Latest posts</h5>
+
+                      <ul class="link-list">
+                        <li>
+                          <a href="reactivejava.html"
+                            >Reactive Programming Through Java</a
+                          >
+                        </li>
+       
+                        <li>
+                          <a href="SAPclassification.html"
+                            >Classification Systems In SAP Commerce</a
+                          >
+                        </li>
+
+                        <li>
+                          <a href="SRGAN.html"
+                            >Revolutionizing Image Enhancement: A Deep Dive into SRGAN</a
+                          >
+                        </li>
+
+                        <li>
+                          <a href="ExploratoryTesting.html"
+                            >Exploratory Testing: Unleashing Creativity in Quality Assurance</a
+                          >
+                          </li>
+                      </ul>
+                  </div>
+              </div>
+              
+              <div class="col-lg-2"  id="quickLinks">
+                <div class="widget">
+                    <h5 class="widgetheading">Quick Links</h5>
+
+                    <ul class="social-network" style="padding-left: 0px;">
+                      <li>
+                        <a
+                          class="fa fa-facebook"
+                          data-placement="top"
+                          href="https://www.facebook.com/share/iBmat7SDtXvuHWrB/?mibextid=hu50Ix"
+                          style="font-style: italic"
+                          title="Facebook"
+                        ></a>
+                      </li>
+     
+                      <li>
+                        <a
+                          class="fa fa-linkedin"
+                          data-placement="top"
+                          href="https://www.linkedin.com/company/clavrit/"
+                          style="font-style: italic"
+                          title="Linkedin"
+                        ></a>
+                      </li>
+     
+                      <li>
+                        <a
+                          class="fa fa-instagram"
+                          data-placement="top"
+                          href="https://www.instagram.com/clav.ritdigitalsolutions?igsh=MWpnNDR2NTd2OGVybg=="
+                          style="font-style: italic"
+                          title="Instagram"
+                        ></a>
+                      </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-4"></div>
+              
+          </div>
+      </div>
+
+      <div id="sub-footer" style="margin-top: 0px;padding-top: 0px;">
+          <div class="container">
+              <div class="row" style="margin-bottom: 0;">
+                  <div class="col-lg-12">
+                    <div class="copyright" style="text-align: center;">
+                      <p>
+                        <span>&copy; 2019. Clavrit Digital Solutions. All Rights Reserved.</span>
+                      </p>
+                    </div>
+                  </div>
+
+               
+               
+              </div>
+          </div>
+      </div>
+  </footer> 
+  </div>
+  <a href="#" class="scrollup"><i class="fa fa-angle-up active"></i></a>
+
+  <script src="js/jquery.js"></script>
+  <script src="js/jquery.easing.1.3.js"></script>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/jquery.fancybox.pack.js"></script>
+  <script src="js/jquery.fancybox-media.js"></script>
+  <script src="js/portfolio/jquery.quicksand.js"></script>
+  <script src="js/portfolio/setting.js"></script>
+  <script src="js/jquery.flexslider.js"></script>
+  <script src="js/animate.js"></script>
+  <script src="js/custom.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script>
+    // Initialize intlTelInput on the phone input field
+    const phoneInputField = document.querySelector("#phone1");
+    const phoneInput = window.intlTelInput(phoneInputField, {
+      utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
+    });
+  </script>
+</body>
+
+</html>

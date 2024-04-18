@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<title>Clavrit</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="description" content="" />
+	<meta name="author" content="http://webthemez.com" />
+	<!-- css -->
+	<link href="css/bootstrap.min.css" rel="stylesheet" />
+	<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+	<link href="css/fancybox/jquery.fancybox.css" rel="stylesheet">
+	<!-- <link href="css/jcarousel.css" rel="stylesheet" /> -->
+	<link href="css/flexslider.css" rel="stylesheet" />
+	<link href="css/style.css" rel="stylesheet" />
+	<link href="css/blog.css" rel="stylesheet" />
+	<link href="css/footer.css" rel="stylesheet" />
+
+	<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+	<!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+	<div id="wrapper">
+		<!-- start header -->
+		<header>
+			<div class="navbar navbar-default navbar-static-top">
+				<div class="container">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle" data-toggle="collapse"
+							data-target=".navbar-collapse">
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						<a class="navbar-brand" href="index.html"><img src="img/logo.png" class="logoz"
+								alt="logo" /></a>
+					</div>
+					<div class="navbar-collapse collapse ">
+						<ul class="nav navbar-nav">
+							<li><a href="index.html">Home</a></li>
+							<li><a href="services.html">Services</a></li>
+							<!-- <li><a href="portfolio.html">Portfolio</a></li> -->
+							<!-- <li class="active"><a href="pricing.html">Resources</a></li> -->
+							<li class="dropdown">
+								<a style="background-color: transparent; color: white" class="dropdown-toggle"
+									data-toggle="dropdown" href="#">Resources <span class="caret"></span></a>
+								<ul class="dropdown-menu">
+									<li>
+										<a class="d2" href="blogs.html">Blogs</a>
+									</li>
+									<!-- <li><a class="d2" href="caseStudies.html">Case Studies</a></li> -->
+								</ul>
+							</li>
+							<li class="dropdown">
+								<a style="background-color: transparent; color: white" class="dropdown-toggle"
+									data-toggle="dropdown" href="#">Company <span class="caret"></span></a>
+								<ul class="dropdown-menu">
+									<li>
+										<a class="d2" href="about.html">About Us</a>
+									</li>
+									<li><a class="d2" href="career.html">Career</a></li>
+									<li><a class="d2" href="contact.html">Contact Us</a></li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</header><!-- end header -->
+		<section id="inner-headline" style="padding: 0%;">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12">
+						<h2 class="pageTitle">Blogs</h2>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<div style="background-color: white; width: 100%; padding: 0%;" class="container">
+			<div style="font-size: large;" class="col-md-9 col-md-offset-2 col-xs-20">
+				<div style="font-size: medium;" class="mainheading">
+
+
+					<h1 class="posttitle">Interceptors in SAP Commerce</h1>
+
+				</div>
+
+				<!-- Begin Featured Image -->
+				<img class="img-fluid blog-banner" src="img/blog/Interceptor/Interceptor1.PNG"  alt="">
+
+				<!-- End Featured Image -->
+
+				<!-- Begin Post Content -->
+				<div class="article-post">
+					<h3>What is Interceptors ?</h3>
+					<p style="margin-bottom: 0px;">We need to use interceptors whenever we want to perform some action during the <b>life cycle of a model.</b></p>
+					<p style="margin-bottom: 0px;"><b>Example:</b> If we need to validate the model data before saving in database.</p>
+					<p>We can see the main <b>use of interceptors</b> in some scenarios as mentioned below:
+						<br>
+						1. Auditing the details while saving the model data.
+						<br>
+                        2. Validating the model data before saving.
+						<br>
+                        3. Restrict data from deleting or modifying based on some conditions.
+						<br>
+						We can even modify the model before saving it using interceptors.
+					</p>
+					<h3 style="margin-bottom: 10px;">Why we need interceptors ?</h3>
+					<p style="width: 70%;"><b>The interceptors have the ability to interrupt the lifecycle of a model and execute some code and then allow the model to continue its lifecycle.</b>
+					</p>
+					<h3 style="margin-top: 15px; margin-bottom: 15px;">Types of interceptors in Hybris:-</h3>
+					<h4 style="margin-top: 10px; margin-bottom: 10px;"
+					>There are 5 main interceptors provided by Hybris</h4>
+					<p><span class="abc">
+						1) Init Defaults interceptor<br>
+                        2) Prepare interceptor<br>
+                        3) Validate interceptor<br>
+                        4) Load interceptor<br>
+                        5) Remove interceptor<br>
+					</span>
+					<h3 style="margin-top: 10px; margin-bottom: 10px;">1) Init Defaults interceptor:-</h3>
+					<p style="margin-bottom: 0px;">
+						This interceptor is represented by an interface called <b>"InitDefaultsInterceptor".</b></p>
+						<p  style="margin-bottom: 0px; width: 72%;"><b>This is called when a model needs to be filled with its default values.</b>
+							This will be called automatically when modelService.create method is called or when the modelService.initDefaults method is called.</b></p>
+						<h5 style="width: 72%;">Note:- <span>We can use this interceptor to fill the model with additional default values, apart from the values defined in items.xml file.</span></h5>
+
+						<h3>2) Prepare interceptor:-</h3>
+						<p style="margin-bottom: 0px;">This interceptor is represented by an interface called <b>"PrepareInterceptor".</b></p>
+						<p style="margin-bottom: 0px;"><b>This is called before a model is saved to the database and before it is validated by Validate interceptors.</b></p>
+						<h5>Note:- <span>We can use this to add values to the model or modify existing ones before they are saved. <br>If any exception raised during execution, Model will not be saved.</span></h5>
+
+						<h4 style="margin-bottom: 10px;">Example:-</h4>
+						<p>In the AddressModel we have firstName and lastName should starts with first letter as capital.</p>
+							<h4> Steps for creating the PrepareInterceptor</h4>
+					<h5>Step1: Create an PrepareInterceptor in core extension.</h5>
+
+<pre>
+package com.hybris.clavrit.core.interceptor;
+
+import de.hybris.platform.core.model.user.AddressModel;
+import de.hybris.platform.core.model.user.CustomerModel;
+import de.hybris.platform.core.model.user.UserModel;
+import de.hybris.platform.servicelayer.interceptor.InterceptorContext;
+import de.hybris.platform.servicelayer.interceptor.InterceptorException;
+import de.hybris.platform.servicelayer.interceptor.PrepareInterceptor;
+import org.apache.commons.lang.StringUtils;
+						
+public class FullNameFormatInterceptor implements PrepareInterceptor<AddressModel> {
+@Override
+public void onPrepare(AddressModel addressModel, InterceptorContext interceptorContext) throws InterceptorException {
+if (StringUtils.isNotBlank(addressModel.getFirstname())) {
+addressModel.setFirstname(capitalizeFirstLetter(addressModel.getFirstname()));
+}
+if (StringUtils.isNotBlank(addressModel.getLastname())) {
+addressModel.setLastname(capitalizeFirstLetter(addressModel.getLastname()));
+}
+}
+private String capitalizeFirstLetter(String str) {
+return str.substring(0, 1).toUpperCase() + str.substring(1);
+}
+}
+</pre>
+
+<h5>Step 2: Add the step1 entry in *core-spring.xml file</h5>
+<pre>
+    <xmp>
+		<bean id="fullNameFormatInterceptor" class="com.hybris.clavrit.core.interceptor.FullNameFormatInterceptor">
+		</bean>
+		
+		<bean id="fullNameFormatInterceptorMapping"
+			  class="de.hybris.platform.servicelayer.interceptor.impl.InterceptorMapping">
+			<property name="interceptor" ref="fullNameFormatInterceptor"/>
+			<property name="typeCode" value="Address"/>
+		</bean>
+	</xmp>
+</pre>
+
+<h5>Step 3: Go to Backoffice</h5>
+<p  style="margin-top: 10px;margin-bottom: 10px;"><b>Types->type Address and click on search</b></p>
+
+	<img width="75%" class=" img-fluid" src="img/blog/Interceptor/Interceptor2.png" alt="">
+	
+	<p style="margin-top: 10px;margin-bottom: 10px;"><b>In the above image click on red color highlighted symbol we can see the list of addresses will be displayed.</b> </p>
+
+	<img width="75%" class=" img-fluid" src="img/blog/Interceptor/Interceptor3.png" alt="">
+	
+	<p  style="margin-top: 10px;margin-bottom: 10px;"><b> In the above image click on red color highlighted symbol to create new address.</b></p>
+	
+	<img width="75%" class=" img-fluid" src="img/blog/Interceptor/Interceptor4.png" alt="">
+	
+	<img width="75%" class=" img-fluid" src="img/blog/Interceptor/Interceptor5.png" alt="">
+	
+	<p  style="margin-top: 10px;margin-bottom: 10px; width: 72%;"><b>After adding the above details (here we can observe that First Name and Last Name the first letter of the word starts with small letter)
+		 click on finish and you can see the output.</b> </p>
+	<img width="75%" class=" img-fluid" src="img/blog/Interceptor/Interceptor6.png" alt="">
+
+
+	<h3>3) Validate interceptor:-</h3>
+	<h4 style="margin-bottom: 10px;">Example:</h4>
+	<p>In email id we have @ and . Symbol we need to validate weather the email id contains @ and . Symbol </p>
+
+	<h4>Steps for creating the ValidateInterceptor:-</h4>
+	
+	<h5>Step1: Create a ValidateInterceptor in core extension.</h5>
+<pre>
+	package com.hybris.clavrit.core.interceptor;
+
+	import de.hybris.platform.core.model.user.CustomerModel;
+	import de.hybris.platform.servicelayer.interceptor.InterceptorContext;
+	import de.hybris.platform.servicelayer.interceptor.InterceptorException;
+	import de.hybris.platform.servicelayer.interceptor.ValidateInterceptor;
+	import org.apache.commons.lang.StringUtils;
+	
+	public class EmailValidationInterceptor implements ValidateInterceptor<CustomerModel> {
+		private static final String EMAIL_REGEX = "^[\\w.-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,4}$";
+		@Override
+		public void onValidate(CustomerModel customerModel, InterceptorContext context) throws InterceptorException {
+			String email = customerModel.getCustomerID();
+			if (StringUtils.isNotBlank(email) && !email.matches(EMAIL_REGEX)) {
+				throw new InterceptorException("Invalid email format");
+			}
+		}
+	}
+</pre>
+
+<h4>Step 2: Add the step1 entry in *core-spring.xml file</h4>
+<pre>
+    <xmp style="margin-top: 0px; margin-bottom: 0px;">
+    <bean id="emailValidationInterceptor" class="com.hybris.clavrit.core.interceptor.EmailValidationInterceptor"/>
+          <bean id="emailValidationInterceptorMapping" class="de.hybris.platform.servicelayer.interceptor.impl.InterceptorMapping">
+          <property name="interceptor" ref="emailValidationInterceptor"/>
+          <property name="typeCode" value="Customer"/>
+    </bean>
+	</xmp>
+</pre>
+
+<h4 style="margin-bottom: 10px;">Step 3: Go to Backoffice</h4>
+<p><b> Types->type Customers and click on search</b></p>
+
+	<img width="75%" class=" img-fluid" src="img/blog/Interceptor/Interceptor7.png" alt="">
+	<br>
+	<p><b> In the above image click on red color highlighted symbol to see the list of customers.</b></p>
+		<h4 style="width: 72%;">Scenario 1: if we are passing the invalid customerID then that customer is not created in Database.</h4>
+	<img width="75%" class=" img-fluid" src="img/blog/Interceptor/Interceptor8.png" alt="">
+	<br>
+	<p><b>In the above image click on the red color highlighted symbol to create the new customer.</b></p>
+	<img width="75%" class=" img-fluid" src="img/blog/Interceptor/Interceptor9.png" alt="">
+	<p style="width: 72%;"><b> After filling the all values click on finish button. If we are observe that
+	we are giving the customerID is invalid so it will give the output is "Invalid email format"</b></p>
+
+	<h4 style="width: 72%;">Scenario 2: if we are passing the valid customerID then that customer is created in Database.</h4>
+
+	<img width="75%" class=" img-fluid" src="img/blog/Interceptor/Interceptor10.png" alt="">
+	<p style="width: 72%;"><b>After filling the all values click on finish button. If we are observe that we are giving the customerID is valid so the new customer will created in the Database.</b> </p>
+	<img width="75%" class=" img-fluid" src="img/blog/Interceptor/Interceptor11.png" alt="">
+	
+	<h3>4) Load interceptor:-</h3>
+					<p style="margin-bottom: 0px; width: 72%;">This interceptor is represented by an interface called <b>"LoadInterceptor"</b> This is called when we <b>retrieve the model</b> from the database.</p>
+						<h5 style="margin-bottom: 10px;">Note:- <span>We can use load interceptor if we want to change the values of the model after loading it.</span> </h5>
+						<p style="margin-bottom: 0px;">If any exception raised during execution, Model will not be loaded.</p>
+
+						<h3>5) Remove interceptor:-</h3>
+						<p style="width: 72%; margin-bottom: 0px;">This interceptor is represented by an interface called <b>"RemoveInterceptor"</b>This is called before a model is <b>removed/deleted</b> from the database.</p>
+							<h5 style="width: 72%; margin-bottom: 10px;">Note:- <span>We can use remove interceptor whenever we need to remove models that are related to the model but are not in the model context. 
+							</span></h5>
+							<p>We can also use to prevent the <b>removal/deletion</b> of the model if it's always required.</p>
+			</div>
+		</div>
+		</div>
+		</div>
+		<footer style="padding-top: 20px;">
+			<div class="container">
+				<div class="row" style="margin: 0px;">
+					<div class="col-lg-4" id="contact">
+						<div class="widget">
+							<h5 class="widgetheading">Our Contact</h5>
+	  
+							<address style="margin-bottom: 0px;">
+							  <strong>Clavrit Digital Solutions</strong><br />
+							  18, Institutional Area,Prem Puri, Sector 32,<br>
+							  Gurugram, Haryana,122001-India
+							</address>
+			 
+							<p>
+							  <i class="icon-phone"></i>
+							  +91-9810167782<br />
+							  <i class="icon-phone"></i> 0124- 7177829 <br />
+							  <i class="icon-envelope-alt"></i>
+							  info@clavrit.com
+							</p>
+						</div>
+					</div>
+	  
+					<div class="col-lg-2" id="quickLinks">
+						<div class="widget">
+							<h5 class="widgetheading">Quick Links</h5>
+	  
+							<ul class="link-list">
+							  <li>
+								<a href="services.html">Services</a>
+							  </li>
+							  <l >
+								<a href="about.html">About Us</a>
+							  </li>
+							  <li>
+								<a href="blogs.html">Blogs</a>
+							  </li>
+							  <li>
+								<a href="career.html">Career</a>
+							  </li>
+							  <li>
+								<a href="contact.html">Contact us</a>
+							  </li>
+							</ul>
+						</div>
+					</div>
+	  
+					<div class="col-lg-4" id="contact">
+						<div class="widget">
+							<h5 class="widgetheading">Latest posts</h5>
+	  
+							<ul class="link-list">
+							  <li>
+								<a href="reactivejava.html"
+								  >Reactive Programming Through Java</a
+								>
+							  </li>
+			 
+							  <li>
+								<a href="SAPclassification.html"
+								  >Classification System In Sap Hybris</a
+								>
+							  </li>
+
+							  <li>
+								<a href="SRGAN.html"
+								  >Revolutionizing Image Enhancement: A Deep Dive into SRGAN</a
+								>
+							  </li>
+
+							  <li>
+								<a href="ExploratoryTesting.html"
+								  >Exploratory Testing: Unleashing Creativity in Quality Assurance</a
+								>
+							  </li>
+							</ul>
+						</div>
+					</div>
+					
+					<div class="col-lg-2"  id="quickLinks">
+					  <div class="widget">
+						  <h5 class="widgetheading">Quick Links</h5>
+	  
+						  <ul class="social-network" style="padding-left: 0px;">
+							<li>
+							  <a
+								class="fa fa-facebook"
+								data-placement="top"
+								href="https://www.facebook.com/share/iBmat7SDtXvuHWrB/?mibextid=hu50Ix"
+								style="font-style: italic"
+								title="Facebook"
+							  ></a>
+							</li>
+		   
+							<li>
+							  <a
+								class="fa fa-linkedin"
+								data-placement="top"
+								href="https://www.linkedin.com/company/clavrit/"
+								style="font-style: italic"
+								title="Linkedin"
+							  ></a>
+							</li>
+		   
+							<li>
+							  <a
+								class="fa fa-instagram"
+								data-placement="top"
+								href="https://www.instagram.com/clav.ritdigitalsolutions?igsh=MWpnNDR2NTd2OGVybg=="
+								style="font-style: italic"
+								title="Instagram"
+							  ></a>
+							</li>
+						  </ul>
+					  </div>
+				  </div>
+				  <div class="col-lg-4"></div>
+					
+				</div>
+			</div>
+	  
+			<div id="sub-footer" style="margin-top: 0px;padding-top: 0px;">
+				<div class="container">
+					<div class="row" style="margin-bottom: 0;">
+						<div class="col-lg-12">
+						  <div class="copyright" style="text-align: center;">
+							<p>
+							  <span>&copy; 2019. Clavrit Digital Solutions. All Rights Reserved..</span>
+							</p>
+						  </div>
+						</div>
+	  
+					 
+					 
+					</div>
+				</div>
+			</div>
+		</footer> 
+	</div>
+	<a href="#" class="scrollup"><i class="fa fa-angle-up active"></i></a>
+	<!-- javascript
+    ================================================== -->
+	<!-- Placed at the end of the document so the pages load faster -->
+	<script src="js/jquery.js"></script>
+	<script src="js/jquery.easing.1.3.js"></script>
+	<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+	<script>
+		AOS.init();
+	</script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/jquery.fancybox.pack.js"></script>
+	<script src="js/jquery.fancybox-media.js"></script>
+	<script src="js/portfolio/jquery.quicksand.js"></script>
+	<script src="js/portfolio/setting.js"></script>
+	<script src="js/jquery.flexslider.js"></script>
+	<script src="js/animate.js"></script>
+	<script src="js/custom.js"></script>
+</body>
+
+</html>

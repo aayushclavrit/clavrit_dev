@@ -112,12 +112,12 @@
 						We can even modify the model before saving it using interceptors.
 					</p>
 					<h3 style="margin-bottom: 10px;">Why we need interceptors ?</h3>
-					<p style="width: 70%;"><b>The interceptors have the ability to interrupt the lifecycle of a model and execute some code and then allow the model to continue its lifecycle.</b>
+					<p style="width: 70%;">The interceptors have the ability to interrupt the lifecycle of a model and execute some code and then allow the model to continue its lifecycle.
 					</p>
 					<h3 style="margin-top: 15px; margin-bottom: 15px;">Types of interceptors in Hybris:-</h3>
 					<h4 style="margin-top: 10px; margin-bottom: 10px;"
 					>There are 5 main interceptors provided by Hybris</h4>
-					<p><span class="abc">
+					<p>
 						1) Init Defaults interceptor<br>
                         2) Prepare interceptor<br>
                         3) Validate interceptor<br>
@@ -127,13 +127,13 @@
 					<h3 style="margin-top: 10px; margin-bottom: 10px;">1) Init Defaults interceptor:-</h3>
 					<p style="margin-bottom: 0px;">
 						This interceptor is represented by an interface called <b>"InitDefaultsInterceptor".</b></p>
-						<p  style="margin-bottom: 0px; width: 72%;"><b>This is called when a model needs to be filled with its default values.</b>
+						<p  style="margin-bottom: 0px; width: 72%;">This is called when a model needs to be filled with its default values.
 							This will be called automatically when modelService.create method is called or when the modelService.initDefaults method is called.</b></p>
 						<h5 style="width: 72%;">Note:- <span>We can use this interceptor to fill the model with additional default values, apart from the values defined in items.xml file.</span></h5>
 
 						<h3>2) Prepare interceptor:-</h3>
 						<p style="margin-bottom: 0px;">This interceptor is represented by an interface called <b>"PrepareInterceptor".</b></p>
-						<p style="margin-bottom: 0px;"><b>This is called before a model is saved to the database and before it is validated by Validate interceptors.</b></p>
+						<p style="margin-bottom: 0px;">This is called before a model is saved to the database and before it is validated by Validate interceptors.</p>
 						<h5>Note:- <span>We can use this to add values to the model or modify existing ones before they are saved. <br>If any exception raised during execution, Model will not be saved.</span></h5>
 
 						<h4 style="margin-bottom: 10px;">Example:-</h4>

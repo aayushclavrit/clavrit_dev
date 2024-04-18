@@ -139,7 +139,7 @@
 						<h4 style="margin-bottom: 10px;">Example:-</h4>
 						<p>In the AddressModel we have firstName and lastName should starts with first letter as capital.</p>
 							<h4> Steps for creating the PrepareInterceptor</h4>
-					<h5>Step1: Create an PrepareInterceptor in core extension.</h5>
+					<h4>Step1: Create an PrepareInterceptor in core extension.</h4>
 
 <pre>
 package com.hybris.clavrit.core.interceptor;
@@ -168,7 +168,7 @@ return str.substring(0, 1).toUpperCase() + str.substring(1);
 }
 </pre>
 
-<h5>Step 2: Add the step1 entry in *core-spring.xml file</h5>
+<h4>Step 2: Add the step1 entry in *core-spring.xml file</h4>
 <pre>
     <xmp>
 		<bean id="fullNameFormatInterceptor" class="com.hybris.clavrit.core.interceptor.FullNameFormatInterceptor">
@@ -182,7 +182,7 @@ return str.substring(0, 1).toUpperCase() + str.substring(1);
 	</xmp>
 </pre>
 
-<h5>Step 3: Go to Backoffice</h5>
+<h4>Step 3: Go to Backoffice</h4>
 <p  style="margin-top: 10px;margin-bottom: 10px;">Types->type Address and click on search</p>
 
 	<img width="75%" class=" img-fluid" src="img/blog/Interceptor/Interceptor2.png" alt="">

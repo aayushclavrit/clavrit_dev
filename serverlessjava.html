@@ -116,7 +116,7 @@
 						<br><span class="abc">	•	Scheduled tasks and batch jobs:  </span> Serverless excels in executing scheduled tasks with precision and without the need for a permanent server presence, reducing both resource waste and operational costs.
 					</p>
 					<h3>Example:</h3>
-					<h4>Basic java program with serverless configuration:</h4>
+					<h4 style="margin-bottom: 10px;">Basic java program with serverless configuration:</h4>
 					<h5  style="margin-bottom: 10px;">Entity:</h5>
 
 <pre>	
@@ -180,31 +180,31 @@
 	}
 </pre>
 <h3>Steps for AWS configuration:</h3>
-<h4>Lambda Function creation:</h4>
+<h4 style="margin-bottom: 10px;">Lambda Function creation:</h4>
 <p style="margin-bottom: 5px; margin-top: 5px; font-weight: 600;"> 1.Create a account in “aws.amazon.com”and login using that.</p>
 <p style="margin-bottom: 5px; margin-top: 5px;  font-weight: 600;">2.Go to AWS management console and navigate to Lambda service.</p>
 <img width="100%" class=" img-fluid" src="img/blog/ServerlessPictures/lambdaService.png" alt="">
- <p style="margin-bottom: 5px; margin-top: 5px;  font-weight: 600;">3.Create a Function by clicking “author from a scratch”.</p>
+ <p style="margin-bottom: 15px; margin-top: 15px;  font-weight: 600;">3.Create a Function by clicking “author from a scratch”.</p>
  <img width="100%" class=" img-fluid" src="img/blog/ServerlessPictures/createFunction.png" alt="">
- <p style="margin-bottom: 5px; margin-top: 5px;  font-weight: 600;">4.From the Runtime settings provide the Handler information.</p>
+ <p style="margin-bottom: 15px; margin-top: 15px;  font-weight: 600;">4.From the Runtime settings provide the Handler information.</p>
  <img width="100%" class=" img-fluid" src="img/blog/ServerlessPictures/handlerinfo.png" alt="">
- <p style="margin-bottom: 5px; margin-top: 5px;  font-weight: 600;">5.Upload a jar file.</p>
+ <p style="margin-bottom: 15px; margin-top: 15px;  font-weight: 600;">5.Upload a jar file.</p>
  <img width="100%" class=" img-fluid" src="img/blog/ServerlessPictures/uploadJar.png" alt="">
 <h4>API gateway configuration:</h4>
-<p style="margin-bottom: 5px; margin-top: 5px;  font-weight: 600;">1.Navigate to API gateway service.</p>
+<p style="margin-bottom: 10px; margin-top: 10px;  font-weight: 600;">1.Navigate to API gateway service.</p>
 <img width="100%" class=" img-fluid" src="img/blog/ServerlessPictures/APIGatewayService.png" alt="">
-<p style="margin-bottom: 5px; margin-top: 5px;  font-weight: 600;">2.Create API by selecting Rest API option.</p>
+<p style="margin-bottom: 15px; margin-top: 15px;  font-weight: 600;">2.Create API by selecting Rest API option.</p>
 <img width="100%" class=" img-fluid" src="img/blog/ServerlessPictures/CreateAPI.png" alt=""><br><br>
 <img width="100%" class=" img-fluid" src="img/blog/ServerlessPictures/CreateAPI1.png" alt="">
-<p style="margin-bottom: 5px; margin-top: 5px;  font-weight: 600;">3.Create a resource by providing resource name.</p>
+<p style="margin-bottom: 15px; margin-top: 15px;  font-weight: 600;">3.Create a resource by providing resource name.</p>
 <img width="100%" class=" img-fluid" src="img/blog/ServerlessPictures/createResource.png" alt="">
-<p style="margin-bottom: 5px; margin-top: 5px;  font-weight: 600;">4.Create a method by selecting method type and integration type as “Lambda function” and provide a lambda function name.</p>
+<p style="margin-bottom: 15px; margin-top: 15px;  font-weight: 600;">4.Create a method by selecting method type and integration type as “Lambda function” and provide a lambda function name.</p>
 <img width="100%" class=" img-fluid" src="img/blog/ServerlessPictures/createMethod.png" alt="">
 <br><br>
 <img width="100%" class=" img-fluid" src="img/blog/ServerlessPictures/createMethod2.png" alt="">
-<p style="margin-bottom: 5px; margin-top: 5px;  font-weight: 600;">5.Deploy API by selecting stage.</p>
+<p style="margin-bottom: 15px; margin-top: 15px;  font-weight: 600;">5.Deploy API by selecting stage.</p>
 <img width="100%" class=" img-fluid" src="img/blog/ServerlessPictures/deploy.png" alt="">
-<p style="margin-bottom: 5px; margin-top: 5px;  font-weight: 600;">6.Gateway will provide a API link.</p>
+<p style="margin-bottom: 15px; margin-top: 15px;  font-weight: 600;">6.Gateway will provide a API link.</p>
 <img width="100%" class=" img-fluid" src="img/blog/ServerlessPictures/URL.JPG" alt="">
 <br>
 <h3>Output with tomcat server:</h3>
